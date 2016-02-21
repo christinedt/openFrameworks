@@ -99,17 +99,28 @@ void ofApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
+	// calculate the width of each play region
 	float widthStep = ofGetWidth() / 3.0f;
 	if (x < widthStep){
+		// if clicked in synth region,
+		// play synth audio
 		synth.play();
+
+		// set speed and pan according to mouse position
 		synth.setSpeed( 0.1f + ((float)(ofGetHeight() - y) / (float)ofGetHeight())*10);
 		synth.setPan(ofMap(x, 0, widthStep, -1, 1, true));
 	} else if (x >= widthStep && x < widthStep*2){
+		// if clicked in beats region,
+		// play beats audio
 		beats.play();
 	} else {
+		// if clicked in vocals region,
+		// play vocals audio
 		vocals.play();
+		
+		// set speed and pan according to mouse position
 		vocals.setSpeed( 0.1f + ((float)(ofGetHeight() - y) / (float)ofGetHeight())*3);
-		//map x within the last third of window to -1 to 1 ( for left / right panning )
+		// map x within the last third of window to -1 to 1 ( for left / right panning )
 		vocals.setPan( ofMap(x, widthStep*2, widthStep*3, -1, 1, true) );
 	}
 }

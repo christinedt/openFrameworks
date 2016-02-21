@@ -2,6 +2,15 @@
 
 #include "ofMain.h"
 
+/*************************************************************************
+*
+* This openFrameworks example demonstrates how to load audio files, play 
+* sounds interactively and how to manipulate their pan and playback speed.
+*
+* For more information regarding this example take a look at the README.md
+*
+*************************************************************************/
+
 class ofApp : public ofBaseApp{
 
 	public:
