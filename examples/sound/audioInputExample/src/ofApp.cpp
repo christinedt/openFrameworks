@@ -66,6 +66,7 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
 	
+	//draw instructions
 	ofSetColor(225);
 	ofDrawBitmapString("AUDIO INPUT EXAMPLE", 32, 32);
 	ofDrawBitmapString("press 's' to unpause the audio\n'e' to pause the audio", 31, 92);
@@ -158,10 +159,9 @@ void ofApp::audioIn(ofSoundBuffer & input){
 	
 	float curVol = 0.0;
 	
-	// samples are "interleaved"
 	int numCounted = 0;	
 
-	//lets go through each sample and calculate the root mean square which is a rough way to calculate volume	
+	// go through each sample and calculate the root mean square which is a rough way to calculate volume	
 	for (int i = 0; i < input.getNumFrames(); i++){
 		left[i]		= input[i*2]*0.5;
 		right[i]	= input[i*2+1]*0.5;
@@ -171,10 +171,10 @@ void ofApp::audioIn(ofSoundBuffer & input){
 		numCounted+=2;
 	}
 	
-	//this is how we get the mean of rms :) 
+	// get the mean of root mean square 
 	curVol /= (float)numCounted;
 	
-	// this is how we get the root of rms :) 
+	// this is how we get the root of root mean square 
 	curVol = sqrt( curVol );
 	
 	smoothedVol *= 0.93;
@@ -186,6 +186,7 @@ void ofApp::audioIn(ofSoundBuffer & input){
 
 //--------------------------------------------------------------
 void ofApp::keyPressed  (int key){ 
+	// attach commands to key events
 	if( key == 's' ){
 		soundStream.start();
 	}
