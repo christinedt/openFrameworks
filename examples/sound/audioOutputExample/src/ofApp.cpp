@@ -71,6 +71,7 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
 
+	// draw info and instructions
 	ofSetColor(225);
 	ofDrawBitmapString("AUDIO OUTPUT EXAMPLE", 32, 32);
 	ofDrawBitmapString("press 's' to unpause the audio\npress 'e' to pause the audio", 31, 92);
@@ -125,7 +126,7 @@ void ofApp::draw(){
 		ofPopMatrix();
 	ofPopStyle();
 	
-		
+	//draw more instructions
 	ofSetColor(225);
 	string reportString = "volume: ("+ofToString(volume, 2)+") modify with -/+ keys\npan: ("+ofToString(pan, 2)+") modify with mouse x\nsynthesis: ";
 	if( !bNoise ){
@@ -140,6 +141,8 @@ void ofApp::draw(){
 
 //--------------------------------------------------------------
 void ofApp::keyPressed  (int key){
+
+	// attach commands to key events
 	if (key == '-' || key == '_' ){
 		volume -= 0.05;
 		volume = MAX(volume, 0);
@@ -165,6 +168,7 @@ void ofApp::keyReleased  (int key){
 
 //--------------------------------------------------------------
 void ofApp::mouseMoved(int x, int y ){
+	// change audio frequency based on mouse location
 	int width = ofGetWidth();
 	pan = (float)x / (float)width;
 	float height = (float)ofGetHeight();
@@ -211,8 +215,8 @@ void ofApp::audioOut(ofSoundBuffer & buffer){
 	float leftScale = 1 - pan;
 	float rightScale = pan;
 
-	// sin (n) seems to have trouble when n is very large, so we
-	// keep phase in the range of 0-TWO_PI like this:
+	// reduce phase to the range of 0-TWO_PI in order to prevent
+	// issues with sin (n) when n is very large
 	while (phase > TWO_PI){
 		phase -= TWO_PI;
 	}

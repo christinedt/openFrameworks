@@ -2,6 +2,15 @@
 
 #include "ofMain.h"
 
+/*************************************************************************
+*
+* This openFrameworks example is designed to demonstrate how to access, 
+* extract, and draw from your audio output's raw data.
+*
+* For more information regarding this example take a look at the README.md
+*
+*************************************************************************/
+
 class ofApp : public ofBaseApp{
 
 	public:
