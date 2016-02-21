@@ -42,7 +42,7 @@ void ofApp::draw(){
         }
     }
 
-
+    // draw the instructions and info to the screen
     ofSetHexColor(0x000000);
 	ofDrawBitmapString("press f to change",20,320);
     if(frameByframe) ofSetHexColor(0xCCCCCC);
@@ -63,6 +63,7 @@ void ofApp::draw(){
 
 //--------------------------------------------------------------
 void ofApp::keyPressed  (int key){
+    //attach key events
     switch(key){
         case 'f':
             frameByframe=!frameByframe;
@@ -88,6 +89,7 @@ void ofApp::keyReleased(int key){
 //--------------------------------------------------------------
 void ofApp::mouseMoved(int x, int y ){
 	if(!frameByframe){
+        // set the speed of the video to the movement of the mouse
         int width = ofGetWidth();
         float pct = (float)x / (float)width;
         float speed = (2 * pct - 1) * 5.0f;
@@ -98,6 +100,7 @@ void ofApp::mouseMoved(int x, int y ){
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button){
 	if(!frameByframe){
+        // use dragging of mouse to set position in the video
         int width = ofGetWidth();
         float pct = (float)x / (float)width;
         fingerMovie.setPosition(pct);

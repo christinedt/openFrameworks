@@ -2,6 +2,14 @@
 
 #include "ofMain.h"
 
+/*************************************************************************
+*
+* This example is designed to demonstrate how to play video in openFrameworks.
+*
+* For more information regarding this example take a look at the README.md
+*
+*************************************************************************/
+
 class ofApp : public ofBaseApp{
 
 	public:
