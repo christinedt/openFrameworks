@@ -2,6 +2,15 @@
 
 #include "ofMain.h"
 
+/*************************************************************************
+*
+* This openFrameworks example demonstrates how to visualize an FFT analysis 
+* of the sound that is currently being played.
+*
+* For more information regarding this example take a look at the README.md
+*
+*************************************************************************/
+
 class ofApp : public ofBaseApp{
 
 	public:

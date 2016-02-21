@@ -96,7 +96,7 @@ void ofApp::draw(){
 		ofDrawRectangle(100,ofGetHeight()-300,5*128,200);
 	ofDisableAlphaBlending();
 	
-	// draw the fft resutls:
+	// draw the fft results:
 	ofSetColor(255,255,255,255);
 	
 	float width = (float)(5*128) / nBandsToGet;
