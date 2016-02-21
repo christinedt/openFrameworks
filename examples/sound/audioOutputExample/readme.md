@@ -1,6 +1,6 @@
 #audioOutputExample
 --
-![Screenshot of Example](audioInputExample.gif)
+![Screenshot of Example](audioOutputExample.png)
 
 ###Learning Objectives
 
