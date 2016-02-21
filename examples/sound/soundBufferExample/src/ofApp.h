@@ -2,6 +2,14 @@
 
 #include "ofMain.h"
 
+/*************************************************************************
+*
+* This Example demonstrates how to generate and manipulate audio samples using ofSoundBuffer
+*
+* For more information regarding this example take a look at the README.md
+*
+*************************************************************************/
+
 class ofApp : public ofBaseApp{
 
 	public:
