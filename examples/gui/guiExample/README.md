@@ -1,5 +1,7 @@
 # About the GUI Example
 
+![Screenshot of guiExample](gui.gif)
+
 ### Learning Objectives
 This example shows you how to use a GUI to interact dynamically with sketch parameters. It also includes the use of listeners to check for changes.
 

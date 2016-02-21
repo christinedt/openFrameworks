@@ -3,6 +3,16 @@
 #include "ofMain.h"
 #include "ofxGui.h"
 
+/*************************************************************************
+*
+* This example shows you how to use a GUI to interact dynamically with 
+* sketch parameters. It also includes the use of listeners to check for 
+* changes.
+*
+* For more information regarding this example take a look at the README.md
+*
+*************************************************************************/
+
 class ofApp : public ofBaseApp{
 	
 public:

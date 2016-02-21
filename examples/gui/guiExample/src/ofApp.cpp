@@ -61,8 +61,7 @@ void ofApp::draw(){
 		ofDrawCircle((ofVec2f)center, radius );
 	}
 	
-	// auto draw?
-	// should the gui control hiding?
+	// draw the gui unless it is set to hidden
 	if(!bHide){
 		gui.draw();
 	}
